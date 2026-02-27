@@ -1,0 +1,74 @@
+{% load i18n %}
+{% load static %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+<!DOCTYPE html>
+<html
+  lang="{{ LANGUAGE_CODE|default:'en' }}"
+  data-assets-path="{{ STATIC_PREFIX }}"
+>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+  />
+  <link rel="icon" type="image/x-icon" href="{% static 'images/favicons/favicon.ico' %}"/>
+
+  <title>{% spaceless %}
+    {% block full_title %}
+      {% block title %}{% endblock title %} | {% translate "Космическое агентство!" %}
+    {% endblock %}
+  {% endspaceless %}</title>
+
+  <meta name="description" content="{% block description %}{% endblock %}">
+
+  {% block vendors_styles %}
+    <link rel="stylesheet" href="{% static '_vendors/bootstrap/css/bootstrap.min.css' %}"/>
+  {% endblock %}
+
+  {% block styles %}{% endblock %}
+
+  {% block head_javascript %}{% endblock %}
+</head>
+
+<body class="bg-body-tertiary {% block bodyclass %}{% endblock bodyclass %}">
+{% block layout %}
+  {% block header %}
+    {% include "_layouts/header.html" %}
+  {% endblock %}
+
+  <section id="messages">
+    {% block messages %}
+      <div class="container">
+        {% include '_includes/messages.html' %}
+      </div>
+    {% endblock %}
+  </section>
+
+  <section id="main">
+    {% block main %}
+      <div class="container">
+        <div class="bg-white p-3 border rounded-3 mb-3">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    {% endblock %}
+  </section>
+{% endblock %}
+
+{% block modal %}{% endblock modal %}
+
+{% block extra_body %}{% endblock extra_body %}
+
+{% block vendors_javascript %}
+  <script src="{% static '_vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}
+
+{% block javascript %}{% endblock %}
+</body>
+
+</html>

@@ -73,7 +73,13 @@ To access the Django admin panel, create a superuser:
 docker compose exec django python src/manage.py createsuperuser
 ```
 
-### 5. Application access
+### 5. Import images to slider (optional)
+
+```
+docker compose exec django python src/manage.py import_slides --path=/app/src/apps/slider/fixtures/images --folder="Slider: Advanteges"
+```
+
+### 6. Application access
 
 Website: http://localhost:8000/
 Django Admin: http://localhost:8000/admin/

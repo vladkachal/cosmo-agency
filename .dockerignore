@@ -1,0 +1,12 @@
+.git/
+.idea/
+.ipython/
+.history/
+.node_modules/
+.ruff_cache/
+.venv/
+.vscode/
+backups/
+build/
+.env
+.env.*

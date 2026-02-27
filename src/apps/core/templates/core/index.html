@@ -9,4 +9,14 @@
   <h1 class="mb-3">
     {% translate "Главная" %}
   </h1>
+
+  <div class="row">
+    <div class="col-sm-12">
+      {% for slide in slides %}
+        <div>
+          <img src="{{ slide.image.url }}" alt="{{ slide.name }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock content %}

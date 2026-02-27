@@ -43,9 +43,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # --------------------------------------------------------------------------
     # Third-party apps
+    "adminsortable2",
+    "easy_thumbnails",
+    "filer",
     # --------------------------------------------------------------------------
     # Local apps
     "apps.core",
+    "apps.slider",
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

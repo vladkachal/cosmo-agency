@@ -1,0 +1,38 @@
+{% load thumbnail %}
+
+<div class="slider-block {{ slider_class_name }}">
+
+  <div class="slider-block__preview">
+    {% for slide in slides %}
+      <div class="slider-block__slide slider-block__slide--preview">
+        <img
+          class="slider-block__image slider-block__image--preview"
+          data-lazy="{{ slide.image.url }}"
+          alt="{{ slide.name }}"
+        >
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if slides.count > 1 %}
+    <div class="slider-block__navigation mt-3">
+      {% for slide in slides %}
+        {% thumbnail slide.image 243x243 crop as slide_image_nav_md %}
+        {% thumbnail slide.image 135x135 crop as slide_image_nav_sm %}
+        <div class="slider-block__slide slider-block__slide--navigation">
+          <picture>
+            <source media="(min-width: 768px)" srcset="{{ slide_image_nav_md.url }}">
+            <img
+              src="{{ slide_image_nav_sm.url }}"
+              width="{{ slide_image_nav_sm.width }}"
+              height="{{ slide_image_nav_sm.height }}"
+              class="slider-block__image slider-block__image--navigation"
+              alt="{{ slide.name }}"
+            >
+          </picture>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</div>

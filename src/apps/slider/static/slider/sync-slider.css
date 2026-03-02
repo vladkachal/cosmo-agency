@@ -1,0 +1,33 @@
+.slider-block__slide {
+  position: relative;
+}
+
+.slider-block__slide--preview {
+  padding: 16px;
+  aspect-ratio: 16 / 9
+}
+
+.slider-block__slide--navigation {
+  padding: 5px;
+  aspect-ratio: 1 / 1
+}
+
+.slider-block__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-block__image--preview {
+  cursor: pointer;
+}
+
+.slider-block__image--navigation {
+  border-radius: 4px;
+}
+
+@media (min-width: 992px) {
+  .slider-block__slide--preview {
+    padding: 5px;
+  }
+}

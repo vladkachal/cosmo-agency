@@ -1,13 +1,46 @@
-<header class="py-3 mb-3 border-bottom bg-white">
-  <div class="container">
-    <nav class="navbar navbar-expand-md" aria-label="Header Navigation">
-      <div class="container-fluid px-0">
-        <a class="navbar-brand" href="{% url 'core:index' %}">
-          Космическое агентство
-        </a>
+{% load i18n %}
+{% load static %}
 
-        {% include '_layouts/horizontal-navbar.html' %}
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-xl">
+      <button
+        class="navbar-toggler collapsed me-2"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <img src="{% static 'images/icons/menu.svg' %}">
+      </button>
+
+      <a class="navbar-brand me-auto" href="/">
+        <img src="{% static 'images/icons/logo.svg' %}" alt="Космическое агентство">
+      </a>
+
+      <div class="d-flex order-md-3">
+        <a class="btn btn-orange px-3 py-2 fw-semibold ls-5 text-uppercase" href="#">
+          {% translate "Вход" %}
+        </a>
       </div>
-    </nav>
-  </div>
+
+      <div class="navbar-collapse collapse order-md-2" id="navbarCollapse">
+        <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link fw-semibold ls-5 text-uppercase text-white" href="#advantages">
+              {% translate "Преимущества" %}
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link fw-semibold ls-5 text-uppercase text-white" href="#gallery">
+              {% translate "Фотографии" %}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
 </header>

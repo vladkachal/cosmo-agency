@@ -3,10 +3,37 @@
 {% load i18n %}
 {% load static %}
 
+
 {% block title %}{% translate "Главная" %}{% endblock title %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'slider/_vendors/slick-carousel/slick.css' %}"/>
+  <link rel="stylesheet" href="{% static 'slider/_vendors/slick-carousel/slick-theme.css' %}"/>
+  <link rel="stylesheet" href="{% static 'slider/_vendors/zoomist/zoomist.css' %}"/>
+
+  <link rel="stylesheet" href="{% static 'slider/sync-slider.css' %}"/>
+  <link rel="stylesheet" href="{% static 'slider/fullscreen-image-view.css' %}"/>
+{% endblock styles %}
+
+{% block javascript %}
+  <script src="{% static 'slider/_vendors/slick-carousel/slick.min.js' %}"></script>
+  <script src="{% static 'slider/_vendors/zoomist/zoomist.umd.js' %}"></script>
+
+  <script src="{% static 'slider/sync-slider.js' %}"></script>
+  <script src="{% static 'slider/fullscreen-image-view.js' %}"></script>
+
+  <script src="{% static 'pages/index.js' %}"></script>
+{% endblock javascript %}
 
 {% block content %}
   <h1 class="mb-3">
     {% translate "Главная" %}
   </h1>
+
+  <div class="row">
+    <div class="col-sm-12">
+      {% include "slider/_includes/slider.html" with slides=slides slider_class_name='gallery-slider' %}
+      {% include "slider/_includes/fullscreen-image-view.html" %}
+    </div>
+  </div>
 {% endblock content %}

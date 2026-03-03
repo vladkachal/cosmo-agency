@@ -4,7 +4,7 @@ from apps.slider.models import SliderItem
 
 
 class IndexView(TemplateView):
-    template_name = "core/index.html"
+    template_name = "pages/index.html"
 
     def get_context_data(self, **kwargs: dict) -> dict:
         context = super().get_context_data(**kwargs)

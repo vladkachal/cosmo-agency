@@ -74,7 +74,9 @@ function SyncSlider(options) {
             slidesToShow: 3
           }
         },
-      ]
+      ],
+      prevArrow: $(`${settings.parentClass} .slider-block__btn-prev`),
+      nextArrow: $(`${settings.parentClass} .slider-block__btn-next`),
     });
 
     bindEvents();

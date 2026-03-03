@@ -28,6 +28,7 @@
   top: 0;
   right: 0;
   font-size: 30px;
+  color: #333;
   cursor: pointer;
   z-index: 2;
 }

@@ -42,12 +42,12 @@
   </section>
 
   <section id="gallery" class="gallery py-5">
-    <div class="gallery__container container-xl">
+    <div class="gallery__container container-xl px-0">
       <h2 class="mb-4 my-md-5 display-6 fw-bold text-center">
         {% translate "Фотографии" %}
       </h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-10 col-xl-11 px-lg-5">
+      <div class="row gx-0 justify-content-center">
+        <div class="col col-md-10 col-xl-11 px-md-5">
           {% include "slider/_includes/slider.html" with slides=slides slider_class_name='gallery-slider' %}
         </div>
       </div>

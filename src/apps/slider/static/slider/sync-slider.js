@@ -67,7 +67,7 @@ function SyncSlider(options) {
       centerPadding: '0px',
       responsive: [
         {
-          breakpoint: 992,
+          breakpoint: 768,
           settings: {
             arrows: false,
             centerPadding: '40px',

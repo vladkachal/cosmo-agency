@@ -61,10 +61,6 @@ body {
   object-position: 80% center;
 }
 
-.gallery__container {
-  padding: 0;
-}
-
 @media (max-width: 767.98px) {
   .navbar-brand img {
     height: 2.8rem;
@@ -90,12 +86,6 @@ body {
 
   .advantages__image-wrapper {
     height: 460px;
-  }
-}
-
-@media (min-width: 992px) {
-  .gallery__container {
-    padding: 0 calc(var(--bs-gutter-x) * 0.5);
   }
 }
 

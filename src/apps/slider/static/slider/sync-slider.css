@@ -48,6 +48,10 @@
 
 }
 
+.slider-block__control {
+  display: none;
+}
+
 .slider-block__btn-prev:before {
   background-image: url("./images/arrow-left.svg");
 }
@@ -56,8 +60,12 @@
   background-image: url("./images/arrow-right.svg");
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .slider-block__slide--preview {
     padding: 10px;
+  }
+
+  .slider-block__control {
+    display: block;
   }
 }

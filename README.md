@@ -62,7 +62,7 @@ Use Docker Compose to build and start the application:
 
 ```
 export COMPOSE_FILE=./docker/compose.development.yaml
-docker compose up --build
+docker compose up -d --build
 ```
 
 ### 4. Create a superuser

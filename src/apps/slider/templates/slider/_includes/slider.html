@@ -18,13 +18,22 @@
     <div class="position-relative">
       <div class="slider-block__navigation mt-1">
         {% for slide in slides %}
-          {% thumbnail slide.image 210x210 crop as slide_image_nav_md %}
-          {% thumbnail slide.image 146x146 crop as slide_image_nav_sm %}
+          {% comment %}
+            TODO:
+              - Move hardcoded thumbnail options (size) to THUMBNAIL_ALIASES variable
+              to avoid duplication across the codebase.
+              - Generate thumbnails on slide image upload.
+          {% endcomment %}
+          {% thumbnail slide.image 210x210 crop as thumb_nav_md %}
+          {% thumbnail slide.image 146x146 crop as thumb_nav_sm %}
           <div class="slider-block__slide slider-block__slide--navigation">
             <picture>
-              <source media="(min-width: 576px)" srcset="{{ slide_image_nav_md.url }}">
+              <source
+                media="(min-width: 576px)"
+                srcset="{{ MEDIA_URL }}{{ slide.thumb_nav_md|default:thumb_nav_md }}"
+              >
               <img
-                src="{{ slide_image_nav_sm.url }}"
+                src="{{ MEDIA_URL }}{{ slide.thumb_nav_sm|default:thumb_nav_sm }}"
                 class="slider-block__image slider-block__image--navigation rounded-1"
                 alt="{{ slide.name }}"
               >

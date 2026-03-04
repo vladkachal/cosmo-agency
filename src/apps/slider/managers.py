@@ -1,9 +1,12 @@
 import logging
-from pathlib import Path
 
+from pathlib import Path
 from typing import TYPE_CHECKING
 
+from easy_thumbnails.models import Thumbnail
+
 from django.db import models
+from django.db.models import OuterRef, Subquery
 
 if TYPE_CHECKING:
     from filer.models import File as FilerFile, Image as FilerImage
@@ -19,6 +22,18 @@ class SliderItemQuerySet(models.QuerySet["SliderItem"]):
 
 
 class SliderItemManager(models.Manager["SliderItem"]):
+    @staticmethod
+    def build_thumbnail_subquery(size: str) -> "Subquery":
+        return Subquery(
+            Thumbnail.objects.filter(
+                source__id=OuterRef("image__file_ptr_id"),
+                name__contains=f"__{size}_",
+                modified__gte=OuterRef("image__modified_at"),
+            )
+            .order_by("-modified")
+            .values_list("name")[:1]
+        )
+
     @staticmethod
     def create_slider_items(
         filer_images: list["FilerFile | FilerImage"],

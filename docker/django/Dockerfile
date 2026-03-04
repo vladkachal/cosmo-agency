@@ -40,6 +40,7 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
     --mount=target=/var/cache/apt,type=cache,sharing=locked \
     apt-get update && apt-get install -y --no-install-recommends \
         default-libmysqlclient-dev \
+        gettext \
         wait-for-it && \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && \
     apt-get clean -y && rm -rf /var/lib/apt/lists/*

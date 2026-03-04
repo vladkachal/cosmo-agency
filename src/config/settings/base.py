@@ -11,6 +11,8 @@ from pathlib import Path
 
 from decouple import Csv, config
 
+from django.utils.translation import gettext_lazy as _
+
 CURRENT_ENVIRONMENT = config("CURRENT_ENVIRONMENT")
 
 
@@ -54,6 +56,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -132,7 +135,13 @@ MEDIA_ROOT = BASE_DIR / "media"
 # ------------------------------------------------------------------------------
 USE_TZ = True
 TIME_ZONE = "UTC"
-USE_I18N = False
+USE_I18N = True
+LANGUAGE_CODE = "ru"
+LANGUAGES = [
+    ("en", _("English")),
+    ("ru", _("Russian")),
+]
+LOCALE_PATHS = [str(BASE_DIR / "locale")]
 
 # ------------------------------------------------------------------------------
 # COMPONENTS

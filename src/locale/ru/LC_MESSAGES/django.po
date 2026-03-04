@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-04 09:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: src/apps/core/apps.py:7
+msgid "Core"
+msgstr "Основное"
+
+#: src/apps/core/templates/_layouts/header.html:25
+msgid "Вход"
+msgstr ""
+
+#: src/apps/core/templates/_layouts/header.html:33
+msgid "Преимущества"
+msgstr ""
+
+#: src/apps/core/templates/_layouts/header.html:38
+#: src/apps/core/templates/pages/index.html:47
+msgid "Фотографии"
+msgstr ""
+
+#: src/apps/core/templates/base.html:23
+msgid "Космическое агентство!"
+msgstr ""
+
+#: src/apps/core/templates/pages/_includes/advantages.html:11
+msgid "Спейс шаттлы — пилотируемые корабли"
+msgstr ""
+
+#: src/apps/core/templates/pages/_includes/advantages.html:19
+msgid "Лучшее телескопическое оборудование"
+msgstr ""
+
+#: src/apps/core/templates/pages/_includes/advantages.html:27
+msgid "Исследовательские станции на Луне — шаг к новым открытиям"
+msgstr ""
+
+#: src/apps/core/templates/pages/_includes/advantages.html:35
+msgid "Золотая медаль по научным исследованиям"
+msgstr ""
+
+#: src/apps/core/templates/pages/_includes/hero.html:6
+msgid "Космическое агентство"
+msgstr ""
+
+#: src/apps/core/templates/pages/_includes/hero.html:10
+msgid ""
+"\n"
+"        Национальное управление по аэронавтике и исследованию космического\n"
+"        пространства — ведомство, относящееся к федеральному правительству "
+"США\n"
+"        и подчиняющееся президенту США.\n"
+"      "
+msgstr ""
+
+#: src/apps/core/templates/pages/index.html:7
+msgid "Главная"
+msgstr ""
+
+#: src/apps/slider/admin.py:27
+msgid "preview"
+msgstr "предпросмотр"
+
+#: src/apps/slider/apps.py:7
+msgid "Slider"
+msgstr "Слайдер"
+
+#: src/apps/slider/models.py:10
+msgid "name"
+msgstr "название"
+
+#: src/apps/slider/models.py:12
+msgid "image"
+msgstr "изображение"
+
+#: src/apps/slider/models.py:16
+msgid "order"
+msgstr "порядок"
+
+#: src/apps/slider/models.py:17
+msgid "is active"
+msgstr "активен"
+
+#: src/apps/slider/models.py:22
+msgid "slide"
+msgstr "слайд"
+
+#: src/apps/slider/models.py:23
+msgid "slides"
+msgstr "слайды"
+
+#: src/config/settings/base.py:141
+msgid "English"
+msgstr "Английский"
+
+#: src/config/settings/base.py:142
+msgid "Russian"
+msgstr "Русский"

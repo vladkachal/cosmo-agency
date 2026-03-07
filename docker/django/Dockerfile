@@ -13,6 +13,7 @@ ENV PYTHONOPTIMIZE=1
 RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
     --mount=target=/var/cache/apt,type=cache,sharing=locked \
     apt-get update && apt-get install -y --no-install-recommends \
+        build-essential \
         pkg-config \
         default-libmysqlclient-dev
 
